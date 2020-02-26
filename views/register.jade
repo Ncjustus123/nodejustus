@@ -1,0 +1,30 @@
+extends layout
+
+block content 
+  h1.page-header Register To Become A Jackboy
+  p Please register using the form below 
+   if errors
+    ul
+     for error in errors 
+      li.alert.alert-danger.error!= error.msg
+  form(method='post',action='/users/register',
+  enctype='multipart/form-data')
+    .form-group
+     lable Name
+     input.form-control(name='name', type='text', placeholder='Enter Name')
+     .form-group
+     lable Email
+     input.form-control(name='email', type='text', placeholder='Enter email')
+     .form-group
+     lable Username
+     input.form-control(name='username', type='text', placeholder='Enter UserName')
+     .form-group
+     lable Password
+     input.form-control(name='password', type='password', placeholder='Enter Password')
+     .form-group
+     lable Confirm Password
+     input.form-control(name='password2', type='password', placeholder='confirm password')
+     .form-group
+     lable Profile image
+     input.form-control(name='file', type='file')
+     input.btn.btn-primary(type='submit', name ='submit',value ='Register')

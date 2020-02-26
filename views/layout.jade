@@ -1,0 +1,38 @@
+doctype html 
+html(lang='en')
+  head 
+    title Welcome
+    script(src="//code.jquery.com/jquery-2.1.0.min.js")
+    link(rel='stylesheet',href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
+    script(src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js")
+    script(src="//cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js")
+    link(rel='stylesheet', href='/css/style.css')
+  body 
+   .navbar.navbar-default(role='navigation')
+     .container
+       .navbar-header
+         button.navbar-toggle(type='button',data-
+         toggle='collapse',data-target='.navbar-collapse')
+           span.sr-only Toggle navigation
+           span.icon-bar
+           span.icon-bar
+           span.icon-bar
+         a.navbar-brand(href='#') Node Auth 
+       .navbar-collapse.collapse 
+         ul.nav.navbar-nav
+            li(class=(title == 'Members' ? 'active' : ''))
+             a(href='/') Members
+            li(class=(title == 'About AstroWorld' ? 'active' : ''))
+             a(href='/') About
+            li(class=(title == 'Register' ? 'active' : ''))
+             a(href='/users/register') Register 
+            li(class=(title == 'Login' ? 'active' : ''))
+             a(href='/users/login') Login
+         ul.nav.navbar-nav.navbar-right
+          if user
+           li
+             a(href='/users/logout') Logout
+    .container
+    != messages()
+     block content
+     
